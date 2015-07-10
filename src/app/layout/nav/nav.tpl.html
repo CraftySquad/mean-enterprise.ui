@@ -1,0 +1,28 @@
+<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+    <div class="inner-wrap">
+        <ul class="title-area">
+            <li class="name">
+                <h1>
+                    <a ui-sref="{{navCtrl.states.LANDING}}">
+                        <svg><use xlink:href="..\assets\images\svg.svg#mean"></use></svg>
+                    </a>
+                </h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li ng-click="navCtrl.toggleMobileNav()" class="toggle-topbar menu-icon"><a><span></span></a></li>
+        </ul>
+
+        <section ng-class="navCtrl.mobileActive ? 'active' : 'inactive'" class="top-bar-section active">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li ui-sref-active='active'>
+                    <a ui-sref="{{navCtrl.states.GETTING_STARTED}}">
+                        Getting Started
+                    </a></li>
+                <li ng-click="navCtrl.signIn()">
+                    <a>Sign in</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+</nav>

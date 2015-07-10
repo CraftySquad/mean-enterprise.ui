@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="no-js" ng-app="meanEnt">
+<head>
+    <title ng-bind="$state.current.data.pageTitle">MEAN-Enterprise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- inject:css -->
+    <!-- css placeholder -->
+    <!-- endinject -->
+</head>
+<body>
+<div class="wrapper">
+    <!-- header component -->
+    <mean-header></mean-header>
+    <!-- main navigation component -->
+    <mean-nav></mean-nav>
+    <!-- current ui.router state -->
+    <div class="main-view" ui-view="current"></div>
+    <div class="push"></div>
+</div>
+<!-- footer component -->
+<mean-footer></mean-footer>
+
+<!-- vendor:js -->
+<!-- vendor placeholder -->
+<!-- endinject -->
+
+<!-- inject:js -->
+<!-- app and templates placeholder -->
+<!-- endinject -->
+</body>
+</html>

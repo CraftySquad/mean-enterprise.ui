@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="columns medium-4">
+        <ul class="side-nav" role="navigation">
+            <li ng-repeat="link in sideNavCtrl.links" role="menuitem">
+                <a ng-click="sideNavCtrl.setSource(link.src)">
+                    <i class="fa fa-circle-o"></i> {{link.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div ng-include="sideNavCtrl.src" class="columns medium-8 content"></div>
+</div>

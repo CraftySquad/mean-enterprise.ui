@@ -1,0 +1,26 @@
+<div ng-switch="signIn.state">
+    <form name="signInForm" ng-switch-when="signIn" novalidate>
+        <h4>Sign in</h4>
+
+        <input type="email" ng-model="signIn.user.email" placeholder="email"/>
+        <input type="password" ng-model="signIn.user.password" placeholder="password"/>
+
+        <button class="button" ng-click="signIn.signIn()">Sign in</button>
+
+        <h5><a ng-click="signIn.setState('signUp')">Create an Account</a></h5>
+    </form>
+
+    <form name="signInForm" ng-switch-when="signUp" novalidate>
+        <h4>Create an Account</h4>
+
+        <input type="text" ng-model="signIn.user.username" placeholder="user name" />
+        <input type="email" ng-model="signIn.user.email" placeholder="email"/>
+        <input type="password" ng-model="signIn.user.password" placeholder="password"/>
+
+        <button class="button" ng-click="signIn.signUp()">Sign Up</button>
+
+        <h5><a ng-click="signIn.setState('signIn')">Sign in</a></h5>
+    </form>
+
+    <a class="close-reveal-modal" ng-click="signIn.cancel()">&#215;</a>
+</div>

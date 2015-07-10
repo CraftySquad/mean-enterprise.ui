@@ -1,0 +1,8 @@
+# Created by .gitignore support plugin (hsz.mobi)
+vendor
+node_modules
+build
+code-coverage
+src/app/scss/site.css.map
+src/app/scss/site.css
+.idea
