@@ -44,6 +44,7 @@ $ sudo npm install gulp karma bower jscs -g
 $ sudo npm install
 $ bower install
 $ gulp
+```
 
 # Configure JSCS
 ...
