@@ -17,8 +17,8 @@ angular.module('meanEnt.constant', [])
  * @constant endpoints
  */
   .constant('endpoints', {
-    USER_SIGN_IN: 'user/signIn',
-    USER_SIGN_UP: 'user/signUp'
+    USER_SIGN_IN: 'account/signIn',
+    USER_SIGN_UP: 'account/signUp'
   })
 
 /**

@@ -9,7 +9,7 @@ module.exports = {
     local: {
       'environment': {
         'ENV_TYPE': 'working',
-        'API_PATH': 'http://localhost:1337/',
+        'API_PATH': 'http://localhost:8100/',
         'VERSION': 'v ' + pkg.version
       }
     },

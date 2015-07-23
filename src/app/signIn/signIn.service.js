@@ -55,6 +55,9 @@ function signInServiceImpl($http, endpoints, environment) {
       data: user
     };
 
-    return $http(request);
+    return $http(request)
+      .then(function(response) {
+        return response.data;
+      });
   }
 }

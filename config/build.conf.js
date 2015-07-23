@@ -35,11 +35,11 @@ module.exports = {
     ],
     html: ['src/index.html'],
     staticHtml: [], // For UI Designers. Static HTML used as prototypes
-    svg: ['src/app/shared/assets/images/**/*.svg'], // SVG's to be concatenated and minified
-    sass: 'src/app/shared/scss/site.scss',
+    svg: ['src/app/assets/images/**/*.svg'], // SVG's to be concatenated and minified
+    sass: 'src/app/assets/scss/site.scss',
     images: [
-      'src/app/shared/assets/images/**/*.*',
-      '!src/app/shared/assets/images/**/*.svg'
+      'src/app/assets/images/**/*.*',
+      '!src/app/assets/images/**/*.svg'
     ],
     css: [],
     jsunit: [

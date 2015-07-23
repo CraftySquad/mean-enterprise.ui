@@ -30,22 +30,24 @@ app.use(function(req, res, next) {
 });
 
 /**
- * @description logout route
+ * @description signIn route
  */
-app.post('/api/account/logout', function(req, res) {
+app.post('/account/signIn', function(req, res) {
   var response = {
-    statusText: 'logged out'
+    access_token: 'zew230ojafjlkjc2349dfafdf00ljlj00nnnVVVawe',
+    token_type: 'bearer',
+    expires_in: 1199
   };
 
   res.status(200).json(response);
 });
 
 /**
- * @description token route
+ * @description signUp route
  */
-app.post('/token', function(req, res) {
+app.post('/account/signUp', function(req, res) {
   var response = {
-    token: 'zew230ojafjlkjc2349dfafdf00ljlj00nnnVVVawe'
+    message: 'User Registered!'
   };
 
   res.status(200).json(response);

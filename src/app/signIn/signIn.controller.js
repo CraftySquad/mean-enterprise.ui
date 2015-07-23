@@ -45,10 +45,9 @@ function SignIn(notifyService, signInService, $modalInstance) {
    * @returns {*}
    */
   vm.signIn = function() {
-    return signInService.signIn(vm.user)
+    signInService.signIn(vm.user)
       .then(function(response) {
-        var msg = response.username + ' signed in!';
-        notifyService.create(msg, 'success', {dismissButton: true});
+        notifyService.success('Signed in!', '');
       });
   };
 
@@ -58,10 +57,9 @@ function SignIn(notifyService, signInService, $modalInstance) {
    * @returns {*}
    */
   vm.signUp = function() {
-    return signInService.signUp(vm.user)
+    signInService.signUp(vm.user)
       .then(function(response) {
-        var msg = response.username + ' signed up!';
-        notifyService.create(msg, 'success', {dismissButton: true});
+        notifyService.success(response.message, '');
       });
   };
 }
