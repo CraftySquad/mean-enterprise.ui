@@ -37,7 +37,8 @@ brew install node
 https://git-scm.com/downloads
 ```
 
-```
+# build the app
+```sh
 $ cd MEAN-Enterprise.UI
 $ sudo npm install gulp karma bower jscs -g
 $ sudo npm install
