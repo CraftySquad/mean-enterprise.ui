@@ -9,8 +9,10 @@ angular.module('meanEnt.services.prime', [])
  * @method primeServiceImpl
  * @description service implementation
  * @param {object} $q
+ * @param {function} $http
+ * @param {function} $timeout
  */
-function primeServiceImpl($q, $timeout) {
+function primeServiceImpl($q, $http, $timeout) {
   'use strict';
 
   /**
@@ -26,7 +28,7 @@ function primeServiceImpl($q, $timeout) {
    * @returns {promise}
    */
   function primeApp() {
-    // todo: remove mock delay
+    // remove mock delay
     var defer = $q.defer();
     $timeout(function() {
       return defer.resolve(true);
@@ -34,12 +36,12 @@ function primeServiceImpl($q, $timeout) {
     return defer.promise;
 
     // todo: build requests here
-    //var requests = [
-    //  {method: 'GET', url: '', params: {}},
-    //  {method: 'GET', url: '', params: {}}
+    //var promises = [
+    //  $http({method: 'GET', url: '', params: {pOne: 'value'}}),
+    //  $http({method: 'GET', url: '', params: {pTwo: 'value'}})
     //];
     //
-    //return $q.all(requests)
+    //return $q.all(promises)
     //  .then(function(response) {
     //    // return collection of data
     //    return response;
@@ -48,4 +50,16 @@ function primeServiceImpl($q, $timeout) {
     //    return err;
     //  });
   }
+
+  //function anotherPrimeExample(someArray) {
+  //  var promises = someArray.map(function(item) {
+  //    return $http({
+  //      method: 'GET',
+  //      url: item.url,
+  //      params: {}
+  //    });
+  //  });
+  //
+  //  return $q.all(promises);
+  //}
 }

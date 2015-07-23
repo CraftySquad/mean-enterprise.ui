@@ -2,25 +2,32 @@
  * @type {Gulp}
  * @module gulpfile
  * @description - build the app in various modes
- *      gulp                                                // build for local environment
- *      gulp bump                                           // bump current version
- *      gulp karma-coverage                                 // run karma coverage report and exit
- *      gulp --dev                                          // build minified for deployment
+ *  gulp
+ *    build for local environment
+ *  gulp bump
+ *    bump current version
+ *  gulp karma-coverage
+ *    run karma coverage report and exit
+ *  gulp --dev
+ *    build minified for deployment, no watch or server
  *
- *      --debug                                             // build debuggable version for deployment
- *      --server                                            // server on dev build (filewatch, livereload, server)
+ *  --debug
+ *    build debuggable version for deployment
+ *  --server
+ *    enable server on dev build (filewatch, livereload, server)
  */
 var gulp = require('gulp');
 var config = require('gulp-config')(gulp);
-
+// config files
 var conf = require('./config/build.conf.js');
 var opts = require('./config/options.conf.js');
 var env = require('./config/environments.conf.js');
 var pkg = require('./package.json');
-
 // load all 'gulp-' plugins
 var $ = require('gulp-load-plugins')();
 var argv = require('yargs').argv;
+// run your script as a server
+var server = $.liveServer.new('./config/server.js');
 // utils
 var _ = require('lodash');
 var os = require('os-utils');
@@ -33,7 +40,6 @@ var karma = require('karma').server;
 var log = $.util.log;
 var blue = $.util.colors.blue.bold;
 var red = $.util.colors.red.bold;
-
 // command line options
 var args = {
   debug: argv.debug,
@@ -63,8 +69,8 @@ gulp.task('default', function() {
     'inject-index',
     'unit-tests',
     'file-watch',
-    'server',
-    'liveReload'
+    'serve',
+    'open-browser'
   );
 });
 
@@ -97,27 +103,6 @@ gulp.task('file-watch', function() {
 });
 
 /**
- * liveReload - reload browser on file changes
- */
-gulp.task('liveReload', ['open-browser'], function() {
-  // only fire up liveReload on local builds
-  if (isDeploy()) {
-    log(red('skipping liveReload'));
-    return;
-  }
-
-  /**
-   * watch() allows us to reload changed files only
-   */
-  return gulp.src('./' + conf.dir.build + '/**')
-    .pipe($.plumber({
-      errorHandler: onError
-    }))
-    .pipe($.watch('./' + conf.dir.build + '/**'))
-    .pipe($.connect.reload());
-});
-
-/**
  * clean the root build directory
  * pass callback to ensure task finishes before exiting
  */
@@ -136,7 +121,8 @@ gulp.task('clean', function(cb) {
 gulp.task('unit-tests', function() {
   karma.start({
     configFile: __dirname + '/config/karma.conf.js',
-    singleRun: isDeploy()
+    singleRun: isDeploy(),
+    preprocessors: {}
   });
 });
 
@@ -414,32 +400,22 @@ gulp.task('bump', function() {
 });
 
 /**
- * server - start a server on a specified port and directory
+ * serve - start a server on a specified port and directory
  */
-gulp.task('server', function() {
+gulp.task('serve', function() {
   // only fire up server on local builds
   if (isDeploy()) {
     log(red('skipping server'));
     return;
   }
 
-  $.connect.server({
-    port: conf.serverPort,
-    livereload: true,
-    root: [conf.dir.build]
+  // start local server
+  server.start();
+
+  // watch for changes
+  gulp.watch(['./' + conf.dir.build + '/**/*.*'], function() {
+    server.notify.apply(server, arguments);
   });
-
-  //var dir = __dirname + '/' + conf.dir.build;
-  //
-  ////1. run your script as a server
-  //var server = $.liveServer.new('./config/server.js');
-  //server.start();
-
-  //2. run script with cwd args, e.g. the harmony flag
-  //var server = gls.new(['--harmony', 'myapp.js']);
-  //this will achieve `node --harmony myapp.js`
-  //you can access cwd args in `myapp.js` via `process.argv`
-  //server.start();
 });
 
 /**
@@ -481,7 +457,7 @@ function getBrowser() {
 }
 
 /**
- * @method isLocal
+ * @method isDeploy
  * @description checks if we are building for deployment or locally
  * @returns {boolean}
  */

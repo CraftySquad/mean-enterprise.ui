@@ -8,7 +8,7 @@ module.exports = {
    */
   dir: {
     build: 'build',
-    path: 'src/app/shared/config'
+    path: 'src/app/common/config'
   },
 
   /**
@@ -43,6 +43,7 @@ module.exports = {
     ],
     css: [],
     jsunit: [
+      'vendor/angular-mocks/angular-mocks.js',
       'src/app/**/*.spec.js',
       'data/**/*.js'
     ]

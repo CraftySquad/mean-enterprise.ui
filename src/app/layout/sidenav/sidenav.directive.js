@@ -23,7 +23,7 @@ function sideNavDef() {
     scope: {
       links: '='
     },
-    templateUrl: 'components/sidenav/sidenav.tpl.html',
+    templateUrl: 'layout/sidenav/sidenav.tpl.html',
     replace: false,
     controller: 'SideNavCtrl',
     controllerAs: 'sideNavCtrl',

@@ -20,7 +20,7 @@ function loaderDef() {
   return {
     restrict: 'E',
     scope: {},
-    templateUrl: 'components/loader/loader.tpl.html',
+    templateUrl: 'loader/loader.tpl.html',
     replace: false,
     controller: 'LoaderCtrl',
     controllerAs: 'loaderCtrl',

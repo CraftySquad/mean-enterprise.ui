@@ -29,7 +29,7 @@ function signInServiceImpl($http, endpoints, environment) {
   /**
    * @method signIn
    * @description signs in a user
-   * @param {User} user
+   * @param {object} user
    * @returns {promise}
    */
   function signIn(user) {
@@ -45,7 +45,7 @@ function signInServiceImpl($http, endpoints, environment) {
   /**
    * @method signUp
    * @description creates user account / signs in
-   * @param {User} user
+   * @param {object} user
    * @returns {promise}
    */
   function signUp(user) {

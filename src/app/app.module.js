@@ -19,7 +19,8 @@ angular.module('meanEnt', [
   'meanEnt.controller.landing',
   'meanEnt.controller.gettingStarted',
   'meanEnt.services.loader',
-  'meanEnt.services.prime'
+  'meanEnt.services.prime',
+  'meanEnt.services.storage'
 ])
 
 /**
