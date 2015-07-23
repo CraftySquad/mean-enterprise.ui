@@ -24,7 +24,7 @@ Setup
 =====
 
 # install node view homebrew
-```bash
+```sh
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 brew doctor
@@ -33,6 +33,9 @@ brew install node
 ```
 
 # install git
+```sh
+https://git-scm.com/downloads
+```
 
 ```
 $ cd MEAN-Enterprise.UI
@@ -42,5 +45,5 @@ $ bower install
 $ gulp
 
 # Configure JSCS
-
+...
 ```
