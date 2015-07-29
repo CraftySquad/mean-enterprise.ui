@@ -60,7 +60,7 @@ gulp.task('default', function() {
     'clean',
     'jshint',
     'jscs',
-    'ngConstant',
+    'build-config',
     'copy-assets',
     'svgstore',
     'copy-static-html',
@@ -160,9 +160,9 @@ gulp.task('jscs', function() {
 });
 
 /**
- * ngConstant - updates path.js file with correct environment info
+ * build-config - updates config module with correct environment info
  */
-gulp.task('ngConstant', function() {
+gulp.task('build-config', function() {
   // get correct environment
   var environment = (args.dev || args.debug) ?
     env.environments.dev :
@@ -177,7 +177,7 @@ gulp.task('ngConstant', function() {
       wrap: false,
       name: opts.appModuleName + '.config.path',
       constants: environment,
-      dest: conf.dir.path + '/path.module.js'
+      dest: conf.dir.path + '/config.module.js'
     }))
     .pipe($.wrap('/* auto generated via gulp ngConstant task */\n' +
                  '// jscs:disable\n/* jshint ignore:start */\n\n' +

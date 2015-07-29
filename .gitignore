@@ -6,4 +6,4 @@ code-coverage
 src/app/scss/site.css.map
 src/app/scss/site.css
 .idea
-src/app/common/config/path.module.js
+src/app/common/config/config.module.js
