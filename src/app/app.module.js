@@ -1,6 +1,6 @@
 /**
  * @module app
- * @file entry point for the application
+ * @file define the app module
  */
 angular.module('meanEnt', [
   /* angular */
