@@ -36,6 +36,7 @@ angular.module('meanEnt.constant', [])
  */
   .constant('states', {
     ABSTRACT: 'meanEnt',
+    DASH: 'meanEnt.dash',
     USER: 'meanEnt.user'
   })
 

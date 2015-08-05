@@ -43,26 +43,20 @@ function NavCtrl($mdSidenav, $mdBottomSheet, $mdDialog, $q, userService,
 
   var self = this;
   self.states = states;
-  self.signIn = signIn;
-  self.selectUser = selectUser;
-  self.toggleList = toggleUsersList;
   self.users = [];
 
-  self.menu = [
-    {
-      link: '',
-      title: 'Dashboard',
-      icon: 'dashboard'
-    },
-    {
-      link: '',
-      title: 'Users',
-      icon: 'group'
-    }
-  ];
+  // expose methods
+  self.signIn = signIn;
+  self.selectUser = selectUser;
+  self.toggleList = toggleList;
 
+  // initialize controller
   initialize();
 
+  /**
+   * @method initialize
+   * @description init the controller
+   */
   function initialize() {
     userService.loadAllUsers()
       .then(function(users) {
@@ -72,18 +66,20 @@ function NavCtrl($mdSidenav, $mdBottomSheet, $mdDialog, $q, userService,
   }
 
   /**
-   * Select the current avatars
+   * @method selectUser
+   * @description when a user is selected
+   * @param {object} user
    */
   function selectUser(user) {
     userService.setSelectedUser(user);
-    self.toggleList();
+    toggleList();
   }
 
   /**
-   * First hide the bottomsheet IF visible, then
-   * hide or Show the 'left' sideNav area
+   * @method toggleList
+   * @description hide the bottomSheet, toggle sideNav
    */
-  function toggleUsersList() {
+  function toggleList() {
     var pending = $mdBottomSheet.hide() || $q.when(true);
 
     pending.then(function() {

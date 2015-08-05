@@ -16,5 +16,6 @@ angular.module('meanEnt', [
   'meanEnt.util',
   'meanEnt.layout',
   'meanEnt.loading',
-  'meanEnt.user'
+  'meanEnt.user',
+  'meanEnt.dash'
 ]);

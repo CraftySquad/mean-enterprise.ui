@@ -14,6 +14,34 @@
         <md-tooltip>Sign In</md-tooltip>
     </md-button>
 
+    <!-- menu -->
+    <md-list>
+        <md-item>
+            <a ui-sref="{{navCtrl.states.DASH}}">
+                <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                    <div class="inset">
+                        <ng-md-icon icon="dashboard"></ng-md-icon>
+                    </div>
+                    <div class="inset">Dashboard
+                    </div>
+                </md-item-content>
+            </a>
+        </md-item>
+        <md-item>
+            <a ui-sref="{{navCtrl.states.USER}}">
+                <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                    <div class="inset">
+                        <ng-md-icon icon="group"></ng-md-icon>
+                    </div>
+                    <div class="inset">Users
+                    </div>
+                </md-item-content>
+            </a>
+        </md-item>
+        <md-divider></md-divider>
+    </md-list>
+
+    <!-- user list -->
     <md-list>
         <md-list-item ng-repeat="it in navCtrl.users">
             <md-button ng-click="navCtrl.selectUser(it)"

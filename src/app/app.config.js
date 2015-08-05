@@ -124,7 +124,7 @@ function configImpl($stateProvider, $urlRouterProvider, $compileProvider,
   /**
    * redirect to landing page
    */
-  $urlRouterProvider.otherwise('/user');
+  $urlRouterProvider.otherwise('/dashboard');
 }
 
 /**
