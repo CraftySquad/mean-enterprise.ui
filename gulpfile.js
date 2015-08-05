@@ -88,6 +88,8 @@ gulp.task('file-watch', function() {
 
   // on sass change
   gulp.watch('src/app/**/*.scss', ['build-css']);
+  // on module js change
+  gulp.watch(conf.app.modules, ['jshint', 'jscs', 'app-js']);
   // on app js change
   gulp.watch(conf.app.js, ['jshint', 'jscs', 'app-js']);
   // on template change

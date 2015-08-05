@@ -30,5 +30,5 @@ function dashConfigImpl($stateProvider, states) {
  * @constructor
  */
 function DashCtrl() {
-
+  'use strict';
 }

@@ -2,7 +2,7 @@
  * @module utilService
  * @file utility functions
  */
-angular.module('meanEnt.services.util', [])
+angular.module('meanEnt.util')
   .service('utilService', utilServiceImpl);
 
 /**
@@ -39,21 +39,23 @@ function utilServiceImpl($timeout, $q) {
   /**
    * @method mapProperties
    * @description maps server object to model
-   *  use with .call()
+   *  set the this argument when calling this function
+   *  forEach does not iterate over inherited properties,
+   *  it filters using the hasOwnProperty method
    * @param {object} dto
    */
   function mapProperties(dto) {
-    for (var prop in dto) {
-      if (dto.hasOwnProperty(prop) && this.hasOwnProperty(prop)) {
-        this[prop] = dto[prop];
-      }
-    }
+    var self = this;
+
+    angular.forEach(dto, function(value, key) {
+      self[key] = value;
+    });
   }
 
   /**
    * @method mapProperty
    * @description maps a complex property
-   *  use with .call()
+   *  set the this argument when calling this function
    * @param {object} property
    * @param {function} Model
    */
@@ -66,7 +68,7 @@ function utilServiceImpl($timeout, $q) {
   /**
    * @method mapCollection
    * @description maps a collection of complex properties
-   *  use with .call()
+   *  set the this argument when calling this function
    * @param {Array} property
    * @param {function} Model
    */
