@@ -27,11 +27,13 @@ function headerDef() {
  * @param {object} $mdBottomSheet
  * @param {function} $mdSidenav
  * @param {object} $q
+ * @param {object} $state
  */
-function HeaderCtrl($mdBottomSheet, $mdSidenav, $q) {
+function HeaderCtrl($mdBottomSheet, $mdSidenav, $q, $state) {
   'use strict';
 
   var self = this;
+  self.$state = $state;
 
   // expose methods
   self.toggleSideNav = toggleSideNav;

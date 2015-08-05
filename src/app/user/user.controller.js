@@ -22,7 +22,7 @@ function userConfigImpl($stateProvider, states) {
         templateUrl: 'user/user.tpl.html'
       }
     },
-    data: {pageTitle: 'User Info'}
+    data: {pageTitle: 'User Details'}
   });
 }
 

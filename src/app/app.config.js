@@ -70,7 +70,12 @@ function configImpl($stateProvider, $urlRouterProvider, $compileProvider,
     .icon('google_plus', './assets/md-icons/google_plus.svg', 512)
     .icon('hangouts', './assets/md-icons/hangouts.svg', 512)
     .icon('twitter', './assets/md-icons/twitter.svg', 512)
-    .icon('phone', './assets/md-icons/phone.svg', 512);
+    .icon('phone', './assets/md-icons/phone.svg', 512)
+    .icon('gulp', './assets/md-icons/gulp.svg', 512)
+    .icon('mongo', './assets/md-icons/mongo.svg', 512)
+    .icon('node', './assets/md-icons/node.svg', 512)
+    .icon('express', './assets/md-icons/express.svg', 512)
+    .icon('sass', './assets/md-icons/sass.svg', 512);
 
   var customBlueMap = $mdThemingProvider.extendPalette('light-blue', {
     'contrastDefaultColor': 'light',
