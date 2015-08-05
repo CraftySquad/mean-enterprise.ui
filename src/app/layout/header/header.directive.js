@@ -13,7 +13,7 @@ angular.module('meanEnt.layout')
 function headerDef() {
   return {
     restrict: 'E',
-    scope: {},
+    scope: true,
     templateUrl: 'layout/header/header.tpl.html',
     controller: 'HeaderCtrl',
     controllerAs: 'headerCtrl',
@@ -27,14 +27,11 @@ function headerDef() {
  * @param {object} $mdBottomSheet
  * @param {function} $mdSidenav
  * @param {object} $q
- * @param {object} $state
  */
-function HeaderCtrl($mdBottomSheet, $mdSidenav, $q, $state) {
+function HeaderCtrl($mdBottomSheet, $mdSidenav, $q) {
   'use strict';
 
   var self = this;
-  self.$state = $state;
-
   // expose methods
   self.toggleSideNav = toggleSideNav;
 

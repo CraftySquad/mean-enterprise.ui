@@ -34,10 +34,11 @@ function navDef() {
  * @param {object} $mdBottomSheet
  * @param {object} $mdDialog
  * @param {object} $q
+ * @param {object} $state
  * @param {object} userService
  * @param {object} states
  */
-function NavCtrl($mdSidenav, $mdBottomSheet, $mdDialog, $q, userService,
+function NavCtrl($mdSidenav, $mdBottomSheet, $mdDialog, $q, $state, userService,
                  states) {
   'use strict';
 
@@ -72,6 +73,9 @@ function NavCtrl($mdSidenav, $mdBottomSheet, $mdDialog, $q, userService,
    */
   function selectUser(user) {
     userService.setSelectedUser(user);
+
+    $state.go(states.USER);
+
     toggleList();
   }
 
