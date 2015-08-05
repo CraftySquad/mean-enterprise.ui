@@ -36,8 +36,7 @@ angular.module('meanEnt.constant', [])
  */
   .constant('states', {
     ABSTRACT: 'meanEnt',
-    LANDING: 'meanEnt.landing',
-    GETTING_STARTED: 'meanEnt.gettingStarted'
+    USER: 'meanEnt.user'
   })
 
 /**

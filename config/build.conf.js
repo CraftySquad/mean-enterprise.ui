@@ -26,20 +26,27 @@ module.exports = {
    * collection of files that make up our application
    */
   app: {
+    modules: 'src/app/**/*.module.js',
     js: [
       'src/app/**/*.js',
+      '!src/app/**/*.module.js',
       '!src/app/**/*.spec.js'
     ],
     tpl: [
       'src/app/**/*.tpl.html'
     ],
     html: ['src/index.html'],
-    staticHtml: [], // For UI Designers. Static HTML used as prototypes
-    svg: ['src/app/assets/images/**/*.svg'], // SVG's to be concatenated and minified
+    // For UI Designers. Static HTML used as prototypes
+    staticHtml: [],
+    // SVG's to be concatenated and minified
+    svg: ['src/app/assets/images/**/*.svg'],
     sass: 'src/app/assets/scss/site.scss',
     images: [
       'src/app/assets/images/**/*.*',
       '!src/app/assets/images/**/*.svg'
+    ],
+    mdIcons: [
+      'src/app/assets/md-icons/**/*.svg'
     ],
     css: [],
     jsunit: [
@@ -65,18 +72,16 @@ module.exports = {
     js: [
       'vendor/angular/angular.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
-      'vendor/angular-loading-bar/build/loading-bar.min.js',
       'vendor/angular-animate/angular-animate.js',
+      'vendor/angular-aria/angular-aria.min.js',
       'vendor/angular-sanitize/angular-sanitize.min.js',
-      'vendor/angular-foundation/mm-foundation.min.js',
-      'vendor/angular-foundation/mm-foundation-tpls.min.js',
-      'vendor/lodash/lodash.min.js',
-      'vendor/angular-toastr/dist/angular-toastr.tpls.min.js'
+      'vendor/angular-material/angular-material.min.js',
+      'vendor/angular-material-icons/angular-material-icons.min.js',
+      'vendor/lodash/lodash.min.js'
     ],
     css: [
-      'vendor/font-awesome/css/font-awesome.min.css',
-      'vendor/angular-block-ui/dist/angular-block-ui.css',
-      'vendor/angular-toastr/dist/angular-toastr.css'
+      'vendor/angular-material/angular-material.css',
+      'vendor/angular-material-icons/angular-material-icons.css'
     ],
     assets: [],
     fonts: [

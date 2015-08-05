@@ -1,0 +1,33 @@
+<md-dialog aria-label="Add User">
+    <md-content class="md-padding">
+        <form name="userForm">
+            <div layout layout-sm="column">
+                <md-input-container flex><label>First Name</label>
+                    <input ng-model="addCtrl.user.firstName"
+                           placeholder="Ignored Placeholder">
+                </md-input-container>
+                <md-input-container flex><label>Last Name</label>
+                    <input ng-model="addCtrl.user.lastName"></md-input-container>
+            </div>
+            <md-input-container flex><label>Address</label>
+                <input ng-model="addCtrl.user.address"></md-input-container>
+            <div layout layout-sm="column">
+                <md-input-container flex><label>City</label>
+                    <input ng-model="addCtrl.user.city"></md-input-container>
+                <md-input-container flex><label>State</label>
+                    <input ng-model="addCtrl.user.state"></md-input-container>
+                <md-input-container flex><label>Postal Code</label>
+                    <input ng-model="addCtrl.user.postalCode">
+                </md-input-container>
+            </div>
+            <md-input-container flex><label>Biography</label>
+                <textarea ng-model="addCtrl.user.biography" columns="1"
+                          md-maxlength="150"></textarea>
+            </md-input-container>
+        </form>
+    </md-content>
+    <div class="md-actions" layout="row"><span flex></span>
+        <md-button ng-click="addCtrl.cancel()"> Cancel</md-button>
+        <md-button ng-click="addCtrl.save()" class="md-primary"> Save</md-button>
+    </div>
+</md-dialog>

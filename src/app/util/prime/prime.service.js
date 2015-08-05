@@ -2,17 +2,16 @@
  * @module primeService
  * @file get data to prime the application
  */
-angular.module('meanEnt.services.prime', [])
+angular.module('meanEnt.util')
   .service('primeService', primeServiceImpl);
 
 /**
  * @method primeServiceImpl
  * @description service implementation
  * @param {object} $q
- * @param {function} $http
  * @param {function} $timeout
  */
-function primeServiceImpl($q, $http, $timeout) {
+function primeServiceImpl($q, $timeout) {
   'use strict';
 
   /**
@@ -32,17 +31,18 @@ function primeServiceImpl($q, $http, $timeout) {
     var defer = $q.defer();
     $timeout(function() {
       return defer.resolve(true);
-    }, 1500);
+    }, 2500);
     return defer.promise;
 
-    // todo: build requests here
+    // todo: example of how you might prime users
     //var promises = [
-    //  $http({method: 'GET', url: '', params: {pOne: 'value'}}),
-    //  $http({method: 'GET', url: '', params: {pTwo: 'value'}})
+    //  $http({method: 'GET', url: '/users'})
     //];
     //
     //return $q.all(promises)
     //  .then(function(response) {
+    //    // set users
+    //    userService.setUsers(response[0].data);
     //    // return collection of data
     //    return response;
     //  })

@@ -1,21 +1,17 @@
 /**
- * @module signIn
+ * @module SignInCtrl
  * @file controller for sign in modal
  */
-angular.module('meanEnt.controller.signIn', [
-  'meanEnt.services.notify',
-  'meanEnt.services.signIn'
-])
-  .controller('SignIn', SignIn);
+angular.module('meanEnt.signIn')
+  .controller('SignInCtrl', SignInCtrl);
 
 /**
- * @class SignIn
+ * @class SignInCtrl
  * @constructor
- * @param {object} notifyService
+ * @param {object} $mdDialog
  * @param {object} signInService
- * @param {object} $modalInstance
  */
-function SignIn(notifyService, signInService, $modalInstance) {
+function SignInCtrl($mdDialog, signInService) {
   'use strict';
 
   var vm = this;
@@ -27,7 +23,7 @@ function SignIn(notifyService, signInService, $modalInstance) {
    * @description cancels operation / closes modal
    */
   vm.cancel = function() {
-    $modalInstance.close();
+    $mdDialog.cancel();
   };
 
   /**
@@ -47,7 +43,7 @@ function SignIn(notifyService, signInService, $modalInstance) {
   vm.signIn = function() {
     signInService.signIn(vm.user)
       .then(function(response) {
-        notifyService.success('Signed in!', '');
+
       });
   };
 
@@ -59,7 +55,7 @@ function SignIn(notifyService, signInService, $modalInstance) {
   vm.signUp = function() {
     signInService.signUp(vm.user)
       .then(function(response) {
-        notifyService.success(response.message, '');
+
       });
   };
 }

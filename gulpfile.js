@@ -87,7 +87,7 @@ gulp.task('file-watch', function() {
   log(blue('watching for file changes...'));
 
   // on sass change
-  gulp.watch(conf.app.sass, ['build-css']);
+  gulp.watch('src/app/**/*.scss', ['build-css']);
   // on app js change
   gulp.watch(conf.app.js, ['jshint', 'jscs', 'app-js']);
   // on template change
@@ -175,7 +175,7 @@ gulp.task('build-config', function() {
     .pipe($.ngConstant({
       space: ' ',
       wrap: false,
-      name: opts.appModuleName + '.config.path',
+      name: opts.appModuleName + '.config',
       constants: environment,
       dest: conf.dir.path + '/config.module.js'
     }))
@@ -195,6 +195,7 @@ gulp.task('build-config', function() {
 gulp.task('app-js', function() {
   // template js will be included in app js output during dev* builds
   return $.merge(
+    gulp.src(conf.app.modules),
     gulp.src(conf.app.js),
     gulp.src(conf.app.tpl)
       .pipe($.html2js({
@@ -278,13 +279,13 @@ gulp.task('build-css', function() {
   };
 
   return $.merge(
+    gulp.src(conf.vendor.css),
+    gulp.src(conf.app.css),
     gulp.src(conf.app.sass)
       .pipe($.sass({
         onError: sassError,
         outputStyle: 'compressed'
-      })),
-    gulp.src(conf.app.css),
-    gulp.src(conf.vendor.css)
+      }))
   )
     .pipe($.plumber({
       errorHandler: onError
@@ -321,6 +322,8 @@ gulp.task('inject-index', function() {
   };
 
   // determine which file(s) to inject based on build params
+  var modules = conf.dir.build + '/src/**/*.module.js';
+
   var appFiles = args.debug ?
     // inject debuggable js file
   conf.dir.build + '/' + opts.filePrefix + '.js' :
@@ -335,7 +338,7 @@ gulp.task('inject-index', function() {
     conf.dir.build + '/' + opts.filePrefix + '.vendor.min.js',
     {read: false});
   // app file stream
-  var appStream = gulp.src(appFiles,
+  var appStream = gulp.src([modules, appFiles],
     {read: false});
   // css stream
   var cssStream = gulp.src(
@@ -373,7 +376,14 @@ gulp.task('copy-assets', function() {
       .pipe($.plumber({
         errorHandler: onError
       }))
-      .pipe(gulp.dest(conf.dir.build + '/assets/fonts'))
+      .pipe(gulp.dest(conf.dir.build + '/assets/fonts')),
+
+    // copy material design svg icons
+    gulp.src(conf.app.mdIcons)
+      .pipe($.plumber({
+        errorHandler: onError
+      }))
+      .pipe(gulp.dest(conf.dir.build + '/assets/md-icons'))
   );
 });
 

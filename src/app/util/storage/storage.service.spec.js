@@ -5,7 +5,7 @@ describe('storage service', function() {
   var $window;
   var storageService;
 
-  beforeEach(module('meanEnt.services.storage'));
+  beforeEach(module('meanEnt.util'));
 
   beforeEach(
     inject(function(_$window_, _storageService_) {

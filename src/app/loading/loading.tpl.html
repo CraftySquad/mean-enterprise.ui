@@ -1,0 +1,14 @@
+<div ng-show="loadingCtrl.loading.isLoading" class="dissolve-animation">
+    <div class="page-splash">
+        <div class="loading">
+            <!-- only show image on larger screens -->
+            <svg ng-if="loadingCtrl.larger && loadingCtrl.loading.showLogo">
+                <use xlink:href="..\assets\images\svg.svg#mean"></use>
+            </svg>
+
+            <div layout="row" layout-sm="column" layout-align="space-around">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
+        </div>
+    </div>
+</div>

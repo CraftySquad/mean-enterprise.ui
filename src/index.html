@@ -2,24 +2,32 @@
 <html class="no-js" ng-app="meanEnt">
 <head>
     <title ng-bind="$state.current.data.pageTitle">MEAN-Enterprise</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
 
     <!-- inject:css -->
     <!-- css placeholder -->
     <!-- endinject -->
 </head>
 <body>
-<div class="wrapper">
-    <!-- header component -->
-    <mean-header></mean-header>
+<!-- header component -->
+<mean-header></mean-header>
+<!-- nav and current view -->
+<div layout="row">
     <!-- main navigation component -->
     <mean-nav></mean-nav>
+
     <!-- current ui.router state -->
-    <div class="main-view" ui-view="current"></div>
-    <div class="push"></div>
+    <div flex layout="column"
+         tabIndex="-1"
+         role="main"
+         class="md-whiteframe-z2"
+         ui-view="current"></div>
 </div>
+
 <!-- footer component -->
-<mean-footer></mean-footer>
+<!--<mean-footer></mean-footer>-->
 
 <!-- vendor:js -->
 <!-- vendor placeholder -->

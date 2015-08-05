@@ -2,10 +2,7 @@
  * @module signInService
  * @file service to sign in / sign up
  */
-angular.module('meanEnt.services.signIn', [
-  'meanEnt.constant',
-  'meanEnt.config.path'
-])
+angular.module('meanEnt.signIn')
   .service('signInService', signInServiceImpl);
 
 /**

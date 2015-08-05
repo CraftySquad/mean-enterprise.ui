@@ -1,11 +1,21 @@
 /**
- * @module *.services.validator
- * @file wrapper for the Validator service
+ * @module validatorService
+ * @file checks a value against a regular expression
  */
-angular.module('meanEnt.services.validator', [])
+angular.module('meanEnt.util')
   .service('validatorService', validatorServiceImpl);
 
+/**
+ * @method validatorServiceImpl
+ * @description service implementation
+ * @returns {{isMatch: isMatch, regularExpressions: {url: string}}}
+ */
 function validatorServiceImpl() {
+  'use strict';
+
+  /**
+   * @description service contract
+   */
   return {
     isMatch: isMatch,
     regularExpressions: {
@@ -44,6 +54,15 @@ function validatorServiceImpl() {
     }
   };
 
+  /**
+   * @method isMatch
+   * @description determines if a regular expression is a match
+   * @param {string} type
+   *  type of regular expression (url, etc.)
+   * @param {string} string
+   *  string to verify
+   * @returns {*|Boolean|Array|{index: number, input: string}}
+   */
   function isMatch(type, string) {
     var regularExpression = new RegExp(this.regularExpressions[type]);
     return string.match(regularExpression);

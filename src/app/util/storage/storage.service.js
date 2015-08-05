@@ -2,7 +2,7 @@
  * @module storageService
  * @file handles data persistence in localStorage
  */
-angular.module('meanEnt.services.storage', [])
+angular.module('meanEnt.util')
   .service('storageService', storageServiceImpl);
 
 /**

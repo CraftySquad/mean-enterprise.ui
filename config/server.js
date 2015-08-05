@@ -32,6 +32,14 @@ app.use(function(req, res, next) {
 /**
  * @description signIn route
  */
+app.get('/users', function(req, res) {
+  var response = require(__data + 'users.json');
+  res.status(200).json(response);
+});
+
+/**
+ * @description signIn route
+ */
 app.post('/account/signIn', function(req, res) {
   var response = {
     access_token: 'zew230ojafjlkjc2349dfafdf00ljlj00nnnVVVawe',

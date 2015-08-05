@@ -1,11 +1,8 @@
 /**
- * @module *.directive.footer
- * @file directive for the apps footer
+ * @module meanFooter
+ * @file footer directive
  */
-angular.module('meanEnt.directive.footer', [
-  'meanEnt.constant',
-  'meanEnt.config.path'
-])
+angular.module('meanEnt.layout')
     .directive('meanFooter', footerDef)
     .controller('FooterCtrl', FooterCtrl);
 

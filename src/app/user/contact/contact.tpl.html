@@ -1,0 +1,16 @@
+<md-bottom-sheet class="md-list md-has-header">
+
+    <md-subheader>
+        Contact <span class="name">{{contactCtrl.user.firstName}} {{contactCtrl.user.lastName}}</span>
+    </md-subheader>
+
+    <md-list>
+        <md-item ng-repeat="item in contactCtrl.actions">
+            <md-button ng-click="contactCtrl.submitContact(item)" id="item_{{$index}}">
+                <md-icon md-svg-icon="{{item.iconUrl}}"></md-icon>
+                {{item.name}}
+            </md-button>
+        </md-item>
+    </md-list>
+
+</md-bottom-sheet>

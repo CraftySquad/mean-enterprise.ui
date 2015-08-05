@@ -1,28 +1,27 @@
-<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
-    <div class="inner-wrap">
-        <ul class="title-area">
-            <li class="name">
-                <h1>
-                    <a ui-sref="{{navCtrl.states.LANDING}}">
-                        <svg><use xlink:href="..\assets\images\svg.svg#mean"></use></svg>
-                    </a>
-                </h1>
-            </li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li ng-click="navCtrl.toggleMobileNav()" class="toggle-topbar menu-icon"><a><span></span></a></li>
-        </ul>
+<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-sm')">
 
-        <section ng-class="navCtrl.mobileActive ? 'active' : 'inactive'" class="top-bar-section active">
-            <!-- Right Nav Section -->
-            <ul class="right">
-                <li ui-sref-active='active'>
-                    <a ui-sref="{{navCtrl.states.GETTING_STARTED}}">
-                        Getting Started
-                    </a></li>
-                <li ng-click="navCtrl.signIn()">
-                    <a>Sign in</a>
-                </li>
-            </ul>
-        </section>
-    </div>
-</nav>
+    <md-toolbar class="md-whiteframe-z1">
+        <h1>Side Nav</h1>
+    </md-toolbar>
+
+    <!-- sign in buttom -->
+    <md-button class="md-fab md-fab-top-right md-warn"
+               aria-label="Sign In"
+               ng-click="navCtrl.signIn($event)">
+        <ng-md-icon icon="login"></ng-md-icon>
+        <md-tooltip>Sign In</md-tooltip>
+    </md-button>
+
+    <md-list>
+        <md-list-item ng-repeat="it in navCtrl.users">
+            <md-button ng-click="navCtrl.selectUser(it)"
+                       ng-class="{'selected' : it === navCtrl.selected }">
+                <md-icon md-svg-icon="{{it.avatar}}"
+                         class="avatar"></md-icon>
+                {{it.firstName}} {{it.lastName}}
+            </md-button>
+        </md-list-item>
+    </md-list>
+</md-sidenav>
