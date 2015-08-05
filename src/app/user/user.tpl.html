@@ -1,18 +1,10 @@
 <!-- add user button -->
-<md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="userCtrl.showAdd($event)">
+<md-button class="md-fab md-fab-bottom-right"
+           aria-label="Add"
+           ng-click="userCtrl.showAdd($event)">
     <ng-md-icon icon="add"></ng-md-icon>
     <md-tooltip>Add User</md-tooltip>
 </md-button>
-
-<!-- user header -->
-<md-toolbar layout="row" class="md-whiteframe-z1">
-    <md-button class="menu" hide-gt-sm
-               ng-click="userCtrl.toggleSideNav()"
-               aria-label="Show User List">
-        <md-icon md-svg-icon="menu"></md-icon>
-    </md-button>
-    <h1>User Detail</h1>
-</md-toolbar>
 
 <!-- user info area -->
 <md-content flex id="content">
@@ -22,7 +14,8 @@
     <p>{{userCtrl.user.content}}</p>
 
     <md-button class="contact" md-no-ink
-               ng-click="userCtrl.showContact($event)" aria-label="Contact User">
+               ng-click="userCtrl.showContact($event)"
+               aria-label="Contact User">
         <md-tooltip>Contact {{ userCtrl.user.firstName }}</md-tooltip>
         <md-icon md-svg-icon="share"></md-icon>
     </md-button>

@@ -30,14 +30,12 @@ function userConfigImpl($stateProvider, states) {
  * @class UserCtrl
  * @constructor
  */
-function UserCtrl($mdSidenav, $mdBottomSheet, $mdDialog, $log, $q,
-                  userService) {
+function UserCtrl($mdBottomSheet, $mdDialog, $log, userService) {
   'use strict';
 
   var self = this;
 
   // expose methods
-  self.toggleSideNav = toggleSideNav;
   self.showContact = showContact;
   self.showAdd = showAdd;
 
@@ -49,19 +47,6 @@ function UserCtrl($mdSidenav, $mdBottomSheet, $mdDialog, $log, $q,
       return userService.getSelectedUser();
     }
   });
-
-  /**
-   * @method toggleSideNav
-   * @description hide the bottomSheet if visible, then
-   *  toggle the left sideNav
-   */
-  function toggleSideNav() {
-    var pending = $mdBottomSheet.hide() || $q.when(true);
-
-    pending.then(function() {
-      $mdSidenav('left').toggle();
-    });
-  }
 
   /**
    * @method showContact

@@ -11,19 +11,22 @@
     <!-- endinject -->
 </head>
 <body>
-<!-- header component -->
-<mean-header></mean-header>
 <!-- nav and current view -->
 <div layout="row">
     <!-- main navigation component -->
     <mean-nav></mean-nav>
 
-    <!-- current ui.router state -->
-    <div flex layout="column"
-         tabIndex="-1"
-         role="main"
-         class="md-whiteframe-z2"
-         ui-view="current"></div>
+    <div flex layout="column">
+        <!-- header component -->
+        <mean-header></mean-header>
+
+        <!-- current ui.router state -->
+        <div flex layout="column"
+             tabIndex="-1"
+             role="main"
+             class="md-whiteframe-z2"
+             ui-view="current"></div>
+    </div>
 </div>
 
 <!-- footer component -->
