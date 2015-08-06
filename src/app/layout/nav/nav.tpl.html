@@ -16,7 +16,7 @@
 
     <!-- menu -->
     <md-list>
-        <md-item>
+        <md-item ng-click="navCtrl.toggleList()">
             <a ui-sref="{{navCtrl.states.DASH}}">
                 <md-item-content md-ink-ripple layout="row" layout-align="start center">
                     <div class="inset">
@@ -27,7 +27,7 @@
                 </md-item-content>
             </a>
         </md-item>
-        <md-item>
+        <md-item ng-click="navCtrl.toggleList()">
             <a ui-sref="{{navCtrl.states.USER}}">
                 <md-item-content md-ink-ripple layout="row" layout-align="start center">
                     <div class="inset">
