@@ -259,10 +259,6 @@ gulp.task('vendor-js', function() {
       errorHandler: onError
     }))
     .pipe($.concat(opts.filePrefix + '.vendor.js'))
-    .pipe($.ngAnnotate())
-    .pipe($.uglify({
-      mangle: false
-    }))
     .pipe($.rename({
       extname: '.min.js'
     }))
@@ -323,9 +319,9 @@ gulp.task('inject-index', function() {
     addRootSlash: false
   };
 
-  // determine which file(s) to inject based on build params
   var modules = conf.dir.build + '/src/**/*.module.js';
 
+  // determine which file(s) to inject based on build params
   var appFiles = args.debug ?
     // inject debuggable js file
   conf.dir.build + '/' + opts.filePrefix + '.js' :
@@ -374,7 +370,7 @@ gulp.task('copy-assets', function() {
       .pipe(gulp.dest(conf.dir.build + '/assets/images')),
 
     // copy vendor fonts
-    gulp.src(conf.vendor.fonts)
+  gulp.src(conf.vendor.fonts)
       .pipe($.plumber({
         errorHandler: onError
       }))

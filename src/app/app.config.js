@@ -144,7 +144,7 @@ function appPrimeImpl(loadingService, primeService, $log) {
   // show the logo during prime
   loadingService.show(true);
 
-  return primeService.primeApp()
+  primeService.primeApp()
     .then(function() {
       $log.debug('app primed');
     })
