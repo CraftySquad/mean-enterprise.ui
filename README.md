@@ -5,7 +5,7 @@ MEAN-Enterprise.UI
 
 MEAN-Enterprise's purpose for existence is to provide a best practices, "enterprise-grade" boilerplate for a MEAN stack (MongoDB, Express, Angular.js, Node.js) web application.
 
-# Angular-Material
+# Angular Material
 The app utilizes Angular Material, 'a set of reusable, well-tested, and accessible UI components based on the Material Design system'.  The UI was based on the material-start repo @ https://github.com/angular/material-start.
 
 # Intended Features
