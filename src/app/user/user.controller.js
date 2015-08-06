@@ -29,6 +29,10 @@ function userConfigImpl($stateProvider, states) {
 /**
  * @class UserCtrl
  * @constructor
+ * @param {object} $mdBottomSheet
+ * @param {object} $mdDialog
+ * @param {object} $log
+ * @param {object} userService
  */
 function UserCtrl($mdBottomSheet, $mdDialog, $log, userService) {
   'use strict';
@@ -41,6 +45,7 @@ function UserCtrl($mdBottomSheet, $mdDialog, $log, userService) {
 
   /**
    * @property user
+   * @description exposes the currently selected user
    */
   Object.defineProperty(self, 'user', {
     get: function() {
@@ -51,6 +56,7 @@ function UserCtrl($mdBottomSheet, $mdDialog, $log, userService) {
   /**
    * @method showContact
    * @description show the contact bottom sheet
+   * @param {object} $event
    */
   function showContact($event) {
     return $mdBottomSheet.show({
@@ -90,10 +96,9 @@ function UserCtrl($mdBottomSheet, $mdDialog, $log, userService) {
   /**
    * @method onDialogCancel
    * @description dialog cancel callback
-   * @param {object} user
    */
-  function onDialogCancel(user) {
-    console.log('dialog cancelled ', angular.toJson(user));
+  function onDialogCancel() {
+    console.log('dialog cancelled');
   }
 
   /**

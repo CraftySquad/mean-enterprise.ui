@@ -15,7 +15,6 @@ function AddCtrl($mdDialog, userService) {
   'use strict';
 
   var self = this;
-  // user model
   self.user = {};
 
   // expose functions
@@ -27,16 +26,16 @@ function AddCtrl($mdDialog, userService) {
    * @description cancel the dialog
    */
   function cancel() {
-    $mdDialog.cancel(self.user);
+    $mdDialog.cancel();
   }
 
   /**
    * @method save
-   * @description save a user
-   *  simply adds to the user array for demo purposes
+   * @description mock save a user
+   * @param {object} user
    */
-  function save() {
-    userService.add(self.user);
-    $mdDialog.hide();
+  function save(user) {
+    userService.add(user);
+    $mdDialog.hide(new Date().toUTCString());
   }
 }

@@ -19,6 +19,9 @@ function ContactCtrl($mdBottomSheet, $mdToast, user) {
   var self = this;
   self.user = user;
 
+  // expose methods
+  self.submitContact = submitContact;
+
   // available actions
   self.actions = [
     {
@@ -45,9 +48,9 @@ function ContactCtrl($mdBottomSheet, $mdToast, user) {
 
   /**
    * @method submitContact
-   * @description hide the bottomSheet on button click
+   * @description show toast, hide the bottomSheet on button click
    */
-  self.submitContact = function(action) {
+  function submitContact(action) {
     // show simple toast
     $mdToast.show(
       $mdToast.simple()
@@ -56,5 +59,5 @@ function ContactCtrl($mdBottomSheet, $mdToast, user) {
     );
 
     $mdBottomSheet.hide(action);
-  };
+  }
 }

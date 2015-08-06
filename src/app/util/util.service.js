@@ -9,37 +9,22 @@ angular.module('meanEnt.util')
  * @method utilServiceImpl
  * @description service implementation
  */
-function utilServiceImpl($timeout, $q) {
+function utilServiceImpl() {
   'use strict';
 
   /**
    * @description service contract
    */
   return {
-    mockAsync: mockAsync,
     mapProperties: mapProperties,
     mapProperty: mapProperty,
     mapCollection: mapCollection
   };
 
   /**
-   * @method mockAsync
-   * @description burner method for demo only
-   */
-  function mockAsync(delay) {
-    var defer = $q.defer();
-
-    $timeout(function() {
-      defer.resolve(true);
-    }, delay || 2000);
-
-    return defer.promise;
-  }
-
-  /**
    * @method mapProperties
    * @description maps server object to model
-   *  set the this argument when calling this function
+   *  set the 'this' argument when calling this function
    *  forEach does not iterate over inherited properties,
    *  it filters using the hasOwnProperty method
    * @param {object} dto
@@ -55,7 +40,7 @@ function utilServiceImpl($timeout, $q) {
   /**
    * @method mapProperty
    * @description maps a complex property
-   *  set the this argument when calling this function
+   *  set the 'this' argument when calling this function
    * @param {object} property
    * @param {function} Model
    */
@@ -68,7 +53,7 @@ function utilServiceImpl($timeout, $q) {
   /**
    * @method mapCollection
    * @description maps a collection of complex properties
-   *  set the this argument when calling this function
+   *  set the 'this' argument when calling this function
    * @param {Array} property
    * @param {function} Model
    */
