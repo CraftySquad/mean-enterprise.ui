@@ -10,7 +10,9 @@ The app utilizes Angular Material, 'a set of reusable, well-tested, and accessib
 
 # Modules
 This branch is following John Papa's Style Guide recommendation for modules, which can be found here - https://github.com/johnpapa/angular-styleguide#style-y127.
+
 Why?: Provides consistency for multiple module apps, and for expanding to large applications.
+
 Why?: Provides easy way to use task automation to load all module definitions first, then all other angular files (for bundling).
 
 # Intended Features
@@ -57,4 +59,3 @@ $ gulp
 
 # Configure JSCS
 ...
-```
