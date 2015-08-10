@@ -53,5 +53,3 @@ $ gulp
 # Configure JSCS
 ...
 ```
-
-# MEAN-Enterprise.API built with sails.js coming soon
