@@ -50,7 +50,7 @@ https://git-scm.com/downloads
 
 # build the app
 ```sh
-$ cd MEAN-Enterprise.UI
+$ cd mean-enterprise.ui
 $ sudo npm install gulp karma bower jscs -g
 $ sudo npm install
 $ bower install
