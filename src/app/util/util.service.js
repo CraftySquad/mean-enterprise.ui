@@ -45,8 +45,10 @@ function utilServiceImpl() {
    * @param {function} Model
    */
   function mapProperty(property, Model) {
-    if (this.hasOwnProperty(property) && angular.isFunction(Model)) {
-      this[property] = new Model(this[property]);
+    var self = this;
+
+    if (self.hasOwnProperty(property) && angular.isFunction(Model)) {
+      self[property] = new Model(self[property]);
     }
   }
 
@@ -58,9 +60,11 @@ function utilServiceImpl() {
    * @param {function} Model
    */
   function mapCollection(property, Model) {
-    if (this.hasOwnProperty(property) && angular.isFunction(Model) &&
-        angular.isArray(this[property])) {
-      this[property] = this[property].map(function(item) {
+    var self = this;
+
+    if (self.hasOwnProperty(property) && angular.isFunction(Model) &&
+        angular.isArray(self[property])) {
+      self[property] = self[property].map(function(item) {
         return new Model(item);
       });
     }

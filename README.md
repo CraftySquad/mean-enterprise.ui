@@ -6,7 +6,7 @@ MEAN-Enterprise.UI
 MEAN-Enterprise's purpose for existence is to provide a best practices, "enterprise-grade" boilerplate for a MEAN stack (MongoDB, Express, Angular.js, Node.js) web application.
 
 # Angular Material
-The app utilizes Angular Material, 'a set of reusable, well-tested, and accessible UI components based on the Material Design system'.  The UI was based on the material-start repo @ https://github.com/angular/material-start.
+The app utilizes Angular Material, 'a set of reusable, well-tested, and accessible UI components based on the Material Design system'.  The UI was modeled after the material-start repo @ https://github.com/angular/material-start.
 
 # Modules
 This branch is following John Papa's Style Guide recommendation for modules, which can be found here - https://github.com/johnpapa/angular-styleguide#style-y127.
@@ -28,7 +28,7 @@ Why?: Provides easy way to use task automation to load all module definitions fi
 
 * Angular.js: 1.4.3
 * Angular-Material: 0.10.0
-* Sails.js: 0.10.x
+* Sails.js: 0.11.x
 
 
 Setup
