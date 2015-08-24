@@ -62,7 +62,7 @@ function NavCtrl($mdSidenav, $mdBottomSheet, $mdDialog, $q, $state, userService,
     userService.loadAllUsers()
       .then(function(users) {
         self.users = users;
-        self.selectUser(users[0]);
+        userService.setSelectedUser(users[0]);
       });
   }
 
