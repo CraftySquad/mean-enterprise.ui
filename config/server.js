@@ -9,7 +9,7 @@ var conf = require('./build.conf.js');
 
 var app = express();
 var __data = __dirname + '/data/';
-var port = 8100;
+var port = process.env.PORT || conf.serverPort;
 
 // set static content path
 var contentDir = path.join(path.dirname(__dirname), '/' + conf.dir.build);
