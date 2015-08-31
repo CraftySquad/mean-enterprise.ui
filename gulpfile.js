@@ -78,6 +78,9 @@ gulp.task('default', function() {
  * ci - task to run on ci server
  */
 gulp.task('ci', function() {
+  // set dev build to true
+  args.dev = true;
+
   log(blue('building ' + pkg.name +
            ' for deployment - version ' + pkg.version));
 
@@ -85,7 +88,7 @@ gulp.task('ci', function() {
   runSequence(
     'jshint',
     'jscs',
-    'ngConstant',
+    'build-config',
     'copy-assets',
     'svgstore',
     'copy-static-html',
