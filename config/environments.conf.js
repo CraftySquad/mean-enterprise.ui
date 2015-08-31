@@ -16,7 +16,7 @@ module.exports = {
     dev: {
       'environment': {
         'ENV_TYPE': 'dev',
-        'API_PATH': 'https://someotherserver.com',
+        'API_PATH': 'https://mean-ui.herokuapp.com/',
         'VERSION': 'v ' + pkg.version
       }
     }
