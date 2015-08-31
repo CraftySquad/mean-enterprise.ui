@@ -10,13 +10,14 @@
   "author": "Crafty",
   "license": "MIT",
   "dependencies": {
+    "bower": "^1.4.1",
+    "connect-livereload": "^0.5.3",
     "express": "^4.13.0",
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "serve-static": "^1.10.0"
   },
   "devDependencies": {
-    "bower": "^1.3.3",
     "cheerio": "^0.19.0",
-    "connect-livereload": "^0.5.3",
     "del": "^1.1.1",
     "gulp-bump": "^0.3.1",
     "gulp-concat": "^2.2.0",
@@ -55,7 +56,6 @@
     "os-utils": "0.0.14",
     "path": "^0.11.14",
     "run-sequence": "^1.0.2",
-    "serve-static": "^1.10.0",
     "stream-series": "^0.1.1",
     "yargs": "^1.3.3"
   }
