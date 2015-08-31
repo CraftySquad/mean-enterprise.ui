@@ -75,6 +75,29 @@ gulp.task('default', function() {
 });
 
 /**
+ * ci - task to run on ci server
+ */
+gulp.task('ci', function() {
+  log(blue('building ' + pkg.name +
+           ' for deployment - version ' + pkg.version));
+
+  // ensure tasks are run in sequence
+  runSequence(
+    'jshint',
+    'jscs',
+    'ngConstant',
+    'copy-assets',
+    'svgstore',
+    'copy-static-html',
+    // these tasks can run simultaneously
+    'app-js',
+    'vendor-js',
+    'build-css',
+    'inject-index'
+  );
+});
+
+/**
  * watch src files for changes and run appropriate tasks
  */
 gulp.task('file-watch', function() {
