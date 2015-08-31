@@ -8,6 +8,9 @@ MEAN-Enterprise's purpose for existence is to provide a best practices, "enterpr
 # Angular Material
 The app utilizes Angular Material, 'a set of reusable, well-tested, and accessible UI components based on the Material Design system'.  The UI was modeled after the material-start repo @ https://github.com/angular/material-start.
 
+# Demo
+https://mean-ui.herokuapp.com
+
 # Modules
 This branch is following John Papa's Style Guide recommendation for modules, which can be found here - https://github.com/johnpapa/angular-styleguide#style-y127.
 
