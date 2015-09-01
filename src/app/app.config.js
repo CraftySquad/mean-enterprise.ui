@@ -99,7 +99,7 @@ function configImpl($stateProvider, $urlRouterProvider, $compileProvider,
    *   then you should open up a debug console in the browser then call this
    *   method directly in this console: angular.reloadWithDebugInfo();
    */
-  if (environment.ENV_TYPE === 'working') {
+  if (environment.ENV_TYPE === 'dev') {
     $compileProvider.debugInfoEnabled(false);
   }
 
