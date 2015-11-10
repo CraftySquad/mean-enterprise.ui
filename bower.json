@@ -26,7 +26,10 @@
     "angular-toastr": "~1.2.1",
     "angular-sanitize": "~1.4.3",
     "angular-material": "~0.10.0",
-    "angular-material-icons": "~0.5.0"
+    "angular-material-icons": "~0.5.0",
+    "js-data": "~2.3.0",
+    "js-data-angular": "~3.0.0",
+    "js-data-http": "~2.1.0"
   },
   "resolutions": {
     "angular": "1.4.3"

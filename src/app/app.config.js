@@ -14,15 +14,7 @@ angular.module('meanEnt')
  */
   .config(configImpl);
 
-/**
- * @method runImpl
- * @description run implementation details
- * @param {object} $rootScope
- * @param {object} $state
- * @param {object} $stateParams
- * @param {object} $log
- */
-function runImpl($rootScope, $state, $stateParams, $log) {
+function runImpl($q, $rootScope, $state, $stateParams, $log, DS) {
   /**
    * @see ui-router -
    *   https://github.com/angular-ui/ui-router/blob/master/sample/app/app.js
@@ -34,8 +26,10 @@ function runImpl($rootScope, $state, $stateParams, $log) {
    *   <li> to active whenever 'contacts.list' or one of its descendants is
    *   active.
    */
+  JSData.DSUtils.Promise = $q;
   $rootScope.$state = $state;
   $rootScope.$stateParams = $stateParams;
+  DS.defineResource('user');
 
   /**
    * @description handle state change errors
@@ -46,21 +40,9 @@ function runImpl($rootScope, $state, $stateParams, $log) {
     });
 }
 
-/**
- * @method configImpl
- * @description config implementation details
- * @param {object} $stateProvider
- * @param {object} $urlRouterProvider
- * @param {object} $compileProvider
- * @param {object} $httpProvider
- * @param {object} $mdThemingProvider
- * @param {object} $mdIconProvider
- * @param {object} environment
- * @param {object} states
- */
 function configImpl($stateProvider, $urlRouterProvider, $compileProvider,
                     $httpProvider, $mdThemingProvider, $mdIconProvider,
-                    environment, states) {
+                    environment, states, DSHttpAdapterProvider) {
 
   $mdIconProvider
     .defaultIconSet('./assets/md-icons/avatars.svg', 128)
@@ -76,6 +58,10 @@ function configImpl($stateProvider, $urlRouterProvider, $compileProvider,
     .icon('node', './assets/md-icons/node.svg', 512)
     .icon('express', './assets/md-icons/express.svg', 512)
     .icon('sass', './assets/md-icons/sass.svg', 512);
+
+  angular.extend(DSHttpAdapterProvider.defaults, {
+    basePath: 'https://js-data-prototype.herokuapp.com'
+  });
 
   var customBlueMap = $mdThemingProvider.extendPalette('light-blue', {
     'contrastDefaultColor': 'light',

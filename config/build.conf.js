@@ -77,7 +77,9 @@ module.exports = {
       'vendor/angular-sanitize/angular-sanitize.min.js',
       'vendor/angular-material/angular-material.min.js',
       'vendor/angular-material-icons/angular-material-icons.min.js',
-      'vendor/lodash/lodash.min.js'
+      'vendor/lodash/lodash.min.js',
+      'vendor/js-data/dist/js-data.js',
+      'vendor/js-data-angular/dist/js-data-angular.js'
     ],
     css: [
       'vendor/angular-material/angular-material.css',

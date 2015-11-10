@@ -10,6 +10,7 @@ angular.module('meanEnt', [
   'ngMaterial',
   'ngMdIcons',
   'ui.router',
+  'js-data',
   /* app */
   'meanEnt.templates',
   'meanEnt.common',

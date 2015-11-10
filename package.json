@@ -10,10 +10,14 @@
   "author": "Crafty",
   "license": "MIT",
   "dependencies": {
+    "angular": "^1.4.5",
     "bower": "^1.4.1",
     "connect-livereload": "^0.5.3",
     "express": "^4.13.0",
     "gulp": "^3.9.0",
+    "js-data": "^2.3.0",
+    "js-data-angular": "^3.0.0",
+    "js-data-http": "^2.1.0",
     "serve-static": "^1.10.0"
   },
   "devDependencies": {
