@@ -48,7 +48,6 @@ module.exports = {
     mdIcons: [
       'src/app/assets/md-icons/**/*.svg'
     ],
-    css: [],
     jsunit: [
       'vendor/angular-mocks/angular-mocks.js',
       'src/app/**/*.spec.js',
