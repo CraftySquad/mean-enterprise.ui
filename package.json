@@ -37,7 +37,7 @@
     "gulp-open": "^0.3.2",
     "gulp-plumber": "^0.6.6",
     "gulp-rename": "^1.2.0",
-    "gulp-sass": "2.0.4",
+    "gulp-sass": "^2.1.0",
     "gulp-size": "^1.1.0",
     "gulp-strip-debug": "^1.1.0",
     "gulp-svgmin": "^1.1.1",
