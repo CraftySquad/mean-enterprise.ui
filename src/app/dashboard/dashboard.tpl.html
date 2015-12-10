@@ -4,12 +4,17 @@
                   md-row-height-gt-md="1:1" md-row-height="4:3"
                   md-gutter="8px" md-gutter-gt-sm="4px">
 
+        <h2>In Scope of Dashboard Controller: {{dashCtrl.message}}</h2>
+        <button ng-click="dashCtrl.changeMessage()">Change from Dashboard Controller</button>
+
+        <dashboard-title message="dashCtrl.message"></dashboard-title>
+
         <md-grid-tile md-rowspan="2"
                       md-colspan="2"
                       md-colspan-sm="1"
                       class="red">
             <md-icon md-svg-icon="angular"></md-icon>
-            <md-grid-tile-footer><h3>What more do we need to say</h3></md-grid-tile-footer>
+            <md-grid-tile-footer><h3>Let's turn this into a directive</h3></md-grid-tile-footer>
         </md-grid-tile>
 
         <md-grid-tile md-rowspan="2"

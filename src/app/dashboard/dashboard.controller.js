@@ -31,4 +31,10 @@ function dashConfigImpl($stateProvider, states) {
  */
 function DashCtrl() {
   'use strict';
+  var vm = this;
+  vm.message = 'This is a directive';
+
+  vm.changeMessage = function() {
+    vm.message = 'Changed from Dashboard Controller';
+  };
 }
